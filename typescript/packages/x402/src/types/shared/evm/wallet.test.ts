@@ -165,3 +165,37 @@ describe("createSigner", () => {
     expect(privateKeyToAccount).toHaveBeenCalledWith(privateKey2);
   });
 });
+
+describe("horizen-testnet support", () => {
+  it("should create a public client for horizen-testnet network", () => {
+    const client = createConnectedClient("horizen-testnet");
+
+    expect(client.chain.id).toBe(845320009);
+    expect(client.chain.name).toBe("Horizen Testnet");
+    expect(client.chain.nativeCurrency.symbol).toBe("ETH");
+    expect(client.chain.rpcUrls.default.http).toContain(
+      "https://horizen-rpc-testnet.appchain.base.org",
+    );
+    expect(client.chain.blockExplorers?.default?.url).toBe(
+      "https://horizen-explorer-testnet.appchain.base.org",
+    );
+    expect(client.transport).toBe("mock-transport");
+  });
+
+  it("should create a wallet client for horizen-testnet network with private key", () => {
+    const mockPrivateKey =
+      "0x1234567890123456789012345678901234567890123456789012345678901234" as const;
+    const signer = createSigner("horizen-testnet", mockPrivateKey);
+
+    expect(signer.chain.id).toBe(845320009);
+    expect(signer.chain.name).toBe("Horizen Testnet");
+    expect(signer.chain.nativeCurrency.symbol).toBe("ETH");
+    expect(signer.chain.rpcUrls.default.http).toContain(
+      "https://horizen-rpc-testnet.appchain.base.org",
+    );
+    expect(signer.chain.blockExplorers?.default?.url).toBe(
+      "https://horizen-explorer-testnet.appchain.base.org",
+    );
+    expect(signer.transport).toBe("mock-transport");
+  });
+});

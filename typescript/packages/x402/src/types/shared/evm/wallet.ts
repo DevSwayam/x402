@@ -14,6 +14,31 @@ import { baseSepolia, avalancheFuji, base, sei, seiTestnet } from "viem/chains";
 import { privateKeyToAccount } from "viem/accounts";
 import { Hex } from "viem";
 
+// Custom chain definition for Horizen Testnet
+export const horizenTestnet = {
+  id: 845320009,
+  name: "Horizen Testnet",
+  nativeCurrency: {
+    decimals: 18,
+    name: "Ether",
+    symbol: "ETH",
+  },
+  rpcUrls: {
+    default: {
+      http: ["https://horizen-rpc-testnet.appchain.base.org"],
+    },
+    public: {
+      http: ["https://horizen-rpc-testnet.appchain.base.org"],
+    },
+  },
+  blockExplorers: {
+    default: {
+      name: "Horizen Explorer",
+      url: "https://horizen-explorer-testnet.appchain.base.org",
+    },
+  },
+} as const satisfies Chain;
+
 // Create a public client for reading data
 export type SignerWallet<
   chain extends Chain = Chain,
@@ -185,6 +210,8 @@ function getChainFromNetwork(network: string | undefined): Chain {
       return sei;
     case "sei-testnet":
       return seiTestnet;
+    case "horizen-testnet":
+      return horizenTestnet;
     default:
       throw new Error(`Unsupported network: ${network}`);
   }

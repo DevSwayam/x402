@@ -1,6 +1,6 @@
 {
-  "name": "x402",
-  "version": "0.5.3",
+  "name": "unwallet-horizen",
+  "version": "0.1.1",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/index.d.ts",
@@ -14,13 +14,30 @@
     "format": "prettier -c .prettierrc --write \"**/*.{ts,js,cjs,json,md}\"",
     "format:check": "prettier -c .prettierrc --check \"**/*.{ts,js,cjs,json,md}\"",
     "lint": "eslint . --ext .ts --fix",
-    "lint:check": "eslint . --ext .ts"
+    "lint:check": "eslint . --ext .ts",
+    "prepublishOnly": "npm run build && npm run test"
   },
-  "keywords": [],
+  "keywords": [
+    "unwallet",
+    "x402",
+    "payment-protocol",
+    "blockchain",
+    "ethereum",
+    "horizen",
+    "facilitator",
+    "web3",
+    "wallet"
+  ],
   "license": "Apache-2.0",
   "author": "Coinbase Inc.",
-  "repository": "https://github.com/coinbase/x402",
-  "description": "x402 Payment Protocol",
+  "contributors": [
+    "DevSwayam <swayamkarle2@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevSwayam/x402.git"
+  },
+  "description": "UnWallet - x402 Payment Protocol with Horizen Testnet support - A comprehensive blockchain payment solution with multi-network support",
   "devDependencies": {
     "@coinbase/onchainkit": "^0.38.14",
     "@craftamap/esbuild-plugin-html": "^0.9.0",
@@ -128,5 +145,8 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }
