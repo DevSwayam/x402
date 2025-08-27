@@ -1,7 +1,7 @@
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 import { Address, getAddress } from "viem";
-import { exact } from "x402/schemes";
+import { exact } from "unwallet-horizen/schemes";
 import {
   computeRoutePatterns,
   findMatchingPaymentRequirements,
@@ -9,7 +9,7 @@ import {
   getPaywallHtml,
   processPriceToAtomicAmount,
   toJsonSafe,
-} from "x402/shared";
+} from "unwallet-horizen/shared";
 import {
   FacilitatorConfig,
   moneySchema,
@@ -18,9 +18,9 @@ import {
   Resource,
   RoutesConfig,
   PaywallConfig,
-} from "x402/types";
-import { useFacilitator } from "x402/verify";
-import { safeBase64Encode } from "x402/shared";
+} from "unwallet-horizen/types";
+import { useFacilitator } from "unwallet-horizen/verify";
+import { safeBase64Encode } from "unwallet-horizen/shared";
 
 import { POST } from "./api/session-token";
 

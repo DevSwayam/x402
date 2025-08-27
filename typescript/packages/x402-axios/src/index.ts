@@ -4,13 +4,13 @@ import {
   PaymentRequirements,
   PaymentRequirementsSchema,
   Wallet,
-} from "x402/types";
-import { evm } from "x402/types";
+} from "unwallet-horizen/types";
+import { evm } from "unwallet-horizen/types";
 import {
   createPaymentHeader,
   PaymentRequirementsSelector,
   selectPaymentRequirements,
-} from "x402/client";
+} from "unwallet-horizen/client";
 
 /**
  * Enables the payment of APIs using the x402 payment protocol.
@@ -94,4 +94,4 @@ export function withPaymentInterceptor(
   return axiosClient;
 }
 
-export { decodeXPaymentResponse } from "x402/shared";
+export { decodeXPaymentResponse } from "unwallet-horizen/shared";

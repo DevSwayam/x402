@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import { Address, getAddress } from "viem";
-import { exact } from "x402/schemes";
+import { exact } from "unwallet-horizen/schemes";
 import {
   computeRoutePatterns,
   findMatchingPaymentRequirements,
@@ -8,7 +8,7 @@ import {
   getPaywallHtml,
   processPriceToAtomicAmount,
   toJsonSafe,
-} from "x402/shared";
+} from "unwallet-horizen/shared";
 import {
   FacilitatorConfig,
   moneySchema,
@@ -18,8 +18,8 @@ import {
   Resource,
   RoutesConfig,
   settleResponseHeader,
-} from "x402/types";
-import { useFacilitator } from "x402/verify";
+} from "unwallet-horizen/types";
+import { useFacilitator } from "unwallet-horizen/verify";
 
 /**
  * Creates a payment middleware factory for Express

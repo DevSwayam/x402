@@ -1,15 +1,15 @@
 import { NextFunction, Request, Response } from "express";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { getPaywallHtml, findMatchingRoute } from "x402/shared";
-import { exact } from "x402/schemes";
+import { getPaywallHtml, findMatchingRoute } from "unwallet-horizen/shared";
+import { exact } from "unwallet-horizen/schemes";
 import {
   PaymentMiddlewareConfig,
   PaymentPayload,
   RoutesConfig,
   FacilitatorConfig,
   RouteConfig,
-} from "x402/types";
-import { useFacilitator } from "x402/verify";
+} from "unwallet-horizen/types";
+import { useFacilitator } from "unwallet-horizen/verify";
 import { paymentMiddleware } from "./index";
 
 // Mock dependencies

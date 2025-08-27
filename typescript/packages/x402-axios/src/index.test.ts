@@ -6,7 +6,7 @@ import {
   InternalAxiosRequestConfig,
 } from "axios";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { evm, PaymentRequirements } from "x402/types";
+import { evm, PaymentRequirements } from "unwallet-horizen/types";
 import { withPaymentInterceptor } from "./index";
 
 // Mock the createPaymentHeader function

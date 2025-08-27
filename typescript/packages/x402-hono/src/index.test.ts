@@ -1,15 +1,15 @@
 import { Context } from "hono";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { exact } from "x402/schemes";
-import { findMatchingRoute, getPaywallHtml } from "x402/shared";
+import { exact } from "unwallet-horizen/schemes";
+import { findMatchingRoute, getPaywallHtml } from "unwallet-horizen/shared";
 import {
   FacilitatorConfig,
   PaymentMiddlewareConfig,
   PaymentPayload,
   RouteConfig,
   RoutesConfig,
-} from "x402/types";
-import { useFacilitator } from "x402/verify";
+} from "unwallet-horizen/types";
+import { useFacilitator } from "unwallet-horizen/verify";
 import { paymentMiddleware } from "./index";
 
 // Mock dependencies

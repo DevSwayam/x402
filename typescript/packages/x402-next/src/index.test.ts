@@ -1,15 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { exact } from "x402/schemes";
-import { findMatchingRoute, getPaywallHtml, findMatchingPaymentRequirements } from "x402/shared";
+import { exact } from "unwallet-horizen/schemes";
+import {
+  findMatchingRoute,
+  getPaywallHtml,
+  findMatchingPaymentRequirements,
+} from "unwallet-horizen/shared";
 import {
   FacilitatorConfig,
   PaymentMiddlewareConfig,
   PaymentPayload,
   PaymentRequirements,
   RouteConfig,
-} from "x402/types";
-import { useFacilitator } from "x402/verify";
+} from "unwallet-horizen/types";
+import { useFacilitator } from "unwallet-horizen/verify";
 import { paymentMiddleware } from "./index";
 
 // Mock dependencies

@@ -1,6 +1,6 @@
 import { config } from "dotenv";
 import express from "express";
-import { exact } from "x402/schemes";
+import { exact } from "unwallet-horizen/schemes";
 import {
   Network,
   PaymentPayload,
@@ -8,9 +8,12 @@ import {
   Price,
   Resource,
   settleResponseHeader,
-} from "x402/types";
-import { useFacilitator } from "x402/verify";
-import { processPriceToAtomicAmount, findMatchingPaymentRequirements } from "x402/shared";
+} from "unwallet-horizen/types";
+import { useFacilitator } from "unwallet-horizen/verify";
+import {
+  processPriceToAtomicAmount,
+  findMatchingPaymentRequirements,
+} from "unwallet-horizen/shared";
 
 config();
 
